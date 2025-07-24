@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard | KickConnect</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Welcome, <%= user.name %>!</h2>
+    <p>Role: <strong><%= user.role %></strong></p>
+
+    <% if (user.role === 'Player') { %>
+      <h3>Player Options</h3>
+      <ul>
+        <li><a href="/player/events">Browse Matches & Trials</a></li>
+        <li><a href="/player/profile">View / Edit Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+
+    <% } else if (user.role === 'Host') { %>
+      <h3>Host Options</h3>
+      <ul>
+        <li><a href="/host/create-event">Create New Match</a></li>
+        <li><a href="/host/manage-events">Manage My Events</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+
+    <% } else if (user.role === 'Team') { %>
+      <h3>Team Options</h3>
+      <ul>
+        <li><a href="/team/create-trial">Create Trial</a></li>
+        <li><a href="/team/scout">Scout Players</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    <% } else { %>
+      <p>Invalid role.</p>
+    <% } %>
+  </div>
+</body>
+</html>

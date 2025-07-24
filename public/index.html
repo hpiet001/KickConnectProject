@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KickConnect – Welcome</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Welcome to KickConnect</h1>
+      <p>Your hub for grassroots football. Join games. Find teams. Get scouted.</p>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Register</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section>
+        <h2>Get Started</h2>
+        <p>Create an account as a Player, Host, or Team to begin connecting with the football community.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="year"></span> KickConnect</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

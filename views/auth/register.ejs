@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register | KickConnect</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Create Your KickConnect Account</h2>
+
+    <% if (typeof error !== 'undefined') { %>
+      <div class="error"><%= error %></div>
+    <% } %>
+
+    <form action="/auth/register" method="POST">
+      <label for="name">Full Name</label>
+      <input type="text" name="name" id="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required>
+
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" required>
+
+      <label for="role">Select Your Role</label>
+      <select name="role" id="role" required>
+        <option value="">-- Choose Role --</option>
+        <option value="Player">Player</option>
+        <option value="Host">Host</option>
+        <option value="Team">Team</option>
+      </select>
+
+      <button type="submit">Register</button>
+    </form>
+
+    <p>Already have an account? <a href="/auth/login">Login here</a></p>
+  </div>
+</body>
+</html>
